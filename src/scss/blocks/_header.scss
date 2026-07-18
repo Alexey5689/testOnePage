@@ -1,0 +1,46 @@
+@use '../helpers/' as *;
+.header {
+    &__body-inner {
+        padding-block: #{rem(8)};
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    &__info {
+        display: flex;
+        column-gap: #{rem(54)};
+        align-items: center;
+    }
+    &__contacts {
+        display: flex;
+        column-gap: #{rem(58)};
+        align-items: center;
+    }
+
+    &__email,
+    &__phone {
+        display: flex;
+        font-size: #{rem(18)};
+        line-height: 150%;
+        color: var(--black);
+    }
+    &__email {
+        column-gap: #{rem(4.92)};
+        font-weight: 500;
+    }
+    &__phone {
+        column-gap: #{rem(5.37)};
+        font-weight: 600;
+    }
+    &__button {
+        background-color: var(--grey-2);
+        border: none;
+        border-radius: #{rem(5)};
+        padding-inline: #{rem(25)};
+        padding-block: #{rem(11)};
+        font-weight: 600;
+        font-size: #{rem(16)};
+        line-height: 150%;
+        color: var(--black);
+    }
+}

@@ -1,0 +1,40 @@
+@use 'helpers' as *;
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--white);
+}
+
+h1,
+.h1,
+h4,
+.h4 {
+    color: var(--white);
+}
+
+h1,
+.h1 {
+    font-size: #{rem(58)};
+    font-weight: 700;
+    line-height: 100%;
+}
+
+h4,
+.h4 {
+    font-size: #{rem(21)};
+    font-weight: 600;
+    line-height: 140%;
+}
+
+a,
+input,
+button {
+    transition-duration: var(--transition-duration);
+}
+
+a {
+    text-decoration: none;
+}
+button {
+    border: none;
+}

@@ -3,11 +3,64 @@
     <head>
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0. minimum-sacle=1.0"
+        />
         <title>testOnePage</title>
+        <script type="module" src="/src/main.ts" defer></script>
     </head>
     <body>
-        <h1>test One Page App with Vite and Vue3!</h1>
-        <script type="module" src="/src/main.ts"></script>
+        <header class="header">
+            <div class="header__body-inner container">
+                <a class="header__logo logo" href="/" aria-label="Home" title="Home">
+                    <picture>
+                        <source
+                            srcset="/images/logo/logo@x1.webp 1x, ./public/images/logo/logo@x2.webp 2x"
+                            type="image/webp"
+                        />
+                        <source
+                            srcset="/images/logo/logo@x1.png 1x, ./public/images/logo/logo@x2.png 2x"
+                            type="image/png"
+                        />
+                        <img
+                            src="/images/logo/logo@x1.png"
+                            alt="Логотип компании"
+                            width="268"
+                            height="59"
+                            loading="lazy"
+                        />
+                    </picture>
+                </a>
+                <div class="header__info">
+                    <address class="header__contacts">
+                        <a href="mailto:info@itc-energo.ru" class="header__email">
+                            <img
+                                class="header__contacts-icon"
+                                src="/images/icons/mail.svg"
+                                alt=""
+                                width="20"
+                                height="16"
+                                aria-hidden="true"
+                                loading="lazy"
+                            />
+                            <span>info@example.com</span>
+                        </a>
+                        <a href="tel:+7 (343) 318-21-61" class="header__phone">
+                            <img
+                                class="header__contacts-icon"
+                                src="/images/icons/phone.svg"
+                                alt=""
+                                width="17"
+                                height="17"
+                                aria-hidden="true"
+                            />
+                            <span>+7 (123) 456-78-90</span>
+                        </a>
+                    </address>
+                    <button class="header__button">Получить консультацию</button>
+                </div>
+            </div>
+        </header>
     </body>
 </html>
