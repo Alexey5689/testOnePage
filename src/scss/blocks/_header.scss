@@ -40,7 +40,7 @@
         column-gap: #{rem(13)};
         background-color: var(--grey-2);
         border: none;
-        border-radius: #{rem(5)};
+        border-radius: var(--border-radius-btn);
         padding-inline: #{rem(25)};
         padding-block: #{rem(11)};
         font-weight: 600;

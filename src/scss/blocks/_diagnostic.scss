@@ -1,0 +1,69 @@
+@use '../helpers/' as *;
+
+.diagnostic {
+    --bg-position-y: 20%;
+    &--bg {
+        background: url('../../../public/images/bg/diagnostic-bg.png') no-repeat center var(--bg-position-y) / cover;
+    }
+    &__bgc {
+        background: linear-gradient(to right, rgba(21, 64, 132, 0.72) 0%, rgba(21, 64, 132, 0) 72%);
+    }
+    &__inner {
+        padding-top: #{rem(140)};
+        padding-bottom: #{rem(136)};
+        display: flex;
+        flex-direction: column;
+        row-gap: #{rem(61)};
+    }
+    &__header {
+        display: flex;
+        flex-direction: column;
+        row-gap: #{rem(40)};
+        justify-content: flex-start;
+    }
+    &__title {
+        width: #{rem(970)};
+        font-size: #{rem(58)};
+        &--accent {
+            color: var(--green);
+            display: block;
+        }
+    }
+    &__subtitle {
+        width: #{rem(852)};
+        font-size: #{rem(21)};
+    }
+    &__button {
+        display: flex;
+        column-gap: #{rem(10)};
+    }
+}
+.diagnostic-button {
+    display: flex;
+    column-gap: #{rem(10)};
+    justify-content: flex-start;
+    align-items: center;
+    &__button {
+        display: flex;
+        column-gap: #{rem(10)};
+        align-items: center;
+        background-color: var(--green);
+        color: var(--white);
+        font-size: #{rem(18)};
+        line-height: 140%;
+        font-weight: 600;
+        padding-left: #{rem(26.5)};
+        padding-right: #{rem(22.5)};
+        padding-block: #{rem(20.5)};
+        border-radius: var(--border-radius-btn);
+        width: #{rem(233)};
+        height: #{rem(65)};
+    }
+    &__subscribe {
+        color: var(--white);
+        font-size: #{rem(16)};
+        line-height: 150%;
+        width: #{rem(372)};
+        font-weight: 600;
+    }
+}
