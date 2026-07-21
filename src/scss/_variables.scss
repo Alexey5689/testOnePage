@@ -6,12 +6,14 @@
     --green: #74b84d;
     --black: #000;
     --grey-2: #f2f5f7;
+    --grey-3: #c0c0c0;
     --border-nav-color: #e6e6e6;
     --color-nav-active: #111111;
+    --bg-color-cycle: #f1f5f9;
 
     --border-radius-btn: #{rem(5)};
-
-    --font-family: 'Inter', sans-serif;
+    --border-radius-cycle: #{rem(20)};
+    --font-family: 'Inter', system-ui, sans-serif;
 
     --container-width: #{rem(1440)};
     --container-padding-x: #{rem(10)};

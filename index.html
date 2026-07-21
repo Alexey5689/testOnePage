@@ -2,11 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="./public/images/icons/favIcon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/images/icons/favIcon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
-            name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0. minimum-sacle=1.0"
+            name="description"
+            content="Диагностика и испытания силового электрооборудования, метрологические услуги по
+        всей России. Получите расчет за 3 дня."
         />
+        <meta property="og:title" content="Диагностика и испытания силового электрооборудования" />
+        <meta property="og:description" content="Комплексная оценка технического состояния электрооборудования" />
+        <meta property="og:image" content="/images/og-image.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/fonts/Inter-Medium.woff2" as="font" type="font/woff2" crossorigin />
+        <link rel="preload" href="/images/bg/diagnostic-bg@1x.webp" as="image" type="image/webp" />
         <title>testOnePage</title>
         <script type="module" src="/src/main.ts" defer></script>
     </head>
@@ -17,11 +26,11 @@
                     <a class="header__logo logo" href="/" aria-label="Home" title="Home">
                         <picture>
                             <source
-                                srcset="/images/logo/logo@x1.webp 1x, ./public/images/logo/logo@x2.webp 2x"
+                                srcset="/images/logo/logo@x1.webp 1x, /images/logo/logo@x2.webp 2x"
                                 type="image/webp"
                             />
                             <source
-                                srcset="/images/logo/logo@x1.png 1x, ./public/images/logo/logo@x2.png 2x"
+                                srcset="/images/logo/logo@x1.png 1x, /images/logo/logo@x2.png 2x"
                                 type="image/png"
                             />
                             <img
@@ -63,7 +72,13 @@
                     </div>
                 </div>
                 <div class="header__bottom">
-                    <button class="header__button header__button--padding-alt">
+                    <button
+                        type="button"
+                        id="catalog-toggle"
+                        class="header__button header__button--padding-alt"
+                        aria-expanded="false"
+                        aria-controls="catalog-menu"
+                    >
                         <img
                             class="header__contacts-icon"
                             src="/images/icons/favIcon.svg"
@@ -83,6 +98,220 @@
                             loading="lazy"
                         />
                     </button>
+
+                    <div class="header__dropdown" id="catalog-menu" role="menu" aria-hidden="true">
+                        <ul class="header__dropdown-list">
+                            <li class="header__dropdown-item">
+                                <button
+                                    type="button"
+                                    class="header__dropdown-toggle"
+                                    aria-expanded="false"
+                                    aria-controls="submenu-diagnostic"
+                                >
+                                    Лаборатория диагностики
+                                    <img
+                                        class="header__contacts-icon"
+                                        src="/images/icons/menu-arrow.svg"
+                                        alt=""
+                                        width="8"
+                                        height="9"
+                                        aria-hidden="true"
+                                        loading="eager"
+                                    />
+                                </button>
+                                <ul class="header__submenu" id="submenu-diagnostic" role="menu" aria-hidden="true">
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Диагностика трансформаторов</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Диагностика электрических машин</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Диагностика коммутационной аппаратуры</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Диагностика кабельных линий</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Диагностика ЗУ с определением ЭМС</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Техническое освидетельствование</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Диагностика электрооборудования с применением БПЛА</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem">Испытание СИЗ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header__dropdown-item">
+                                <button
+                                    type="button"
+                                    class="header__dropdown-toggle"
+                                    aria-expanded="false"
+                                    aria-controls="submenu-chemical"
+                                >
+                                    Лаборатория физико-химического анализа
+                                    <img
+                                        class="header__contacts-icon"
+                                        src="/images/icons/menu-arrow.svg"
+                                        alt=""
+                                        width="8"
+                                        height="9"
+                                        aria-hidden="true"
+                                        loading="eager"
+                                    />
+                                </button>
+                                <ul
+                                    class="header__submenu header__submenu--grid"
+                                    id="submenu-chemical"
+                                    role="menu"
+                                    aria-hidden="true"
+                                >
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание трансформаторных масел</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание турбинных масел</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание образцов изоляции</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание силикагеля</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание трансформаторной резины</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание кислоты серной аккумуляторной</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание моторных масел</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание компрессорных масел</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание индустриальных масел</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание трансформаторной резины</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание гидравлических масел</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Анализ дизельного топлива</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem">Анализ СОЖ</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="header__dropdown-item">
+                                <button
+                                    type="button"
+                                    class="header__dropdown-toggle"
+                                    aria-expanded="false"
+                                    aria-controls="submenu-metrolog"
+                                >
+                                    Лаборатория метрологии
+                                    <img
+                                        class="header__contacts-icon"
+                                        src="/images/icons/menu-arrow.svg"
+                                        alt=""
+                                        width="8"
+                                        height="9"
+                                        aria-hidden="true"
+                                        loading="eager"
+                                    />
+                                </button>
+                                <ul
+                                    class="header__submenu header__submenu--width"
+                                    id="submenu-metrolog"
+                                    role="menu"
+                                    aria-hidden="true"
+                                >
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Поверка электротехнических СИ</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Поверка радиотехнических СИ</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Поверка теплотехнических СИ</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Поверка физико-химических СИ</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Аттестация испытательного оборудования и передвижных электролабораторий</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Ремонт электроизмерительной и высоковольтной аппаратуры</a
+                                        >
+                                    </li>
+                                    <li class="header__submenu-item">
+                                        <a href="#" class="header__submenu-link" role="menuitem"
+                                            >Испытание СИ с целью утверждения типа</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                     <nav class="header__menu">
                         <ul class="header__menu-list">
                             <li class="header__menu-item">
@@ -136,7 +365,7 @@
                             </p>
                         </div>
                         <div class="diagnostic-button">
-                            <button type="button" class="diagnostic-button__button">
+                            <button type="button" class="diagnostic-button__button button-accent">
                                 <img
                                     class="diagnostic-button__icon"
                                     src="/images/icons/calc.svg"
@@ -144,7 +373,7 @@
                                     width="16"
                                     height="20"
                                     aria-hidden="true"
-                                    loading="lazy"
+                                    loading="eager"
                                 />
                                 Получить расчет
                             </button>
@@ -155,6 +384,611 @@
                     </div>
                 </div>
             </section>
+            <section class="full-cycle" aria-labelledby="full-cycle-title" aria-describedby="full-cycle-subtitle">
+                <div class="full-cycle__inner container">
+                    <div class="full-cycle__header">
+                        <p id="full-cycle-subtitle" class="full-cycle__subtitle">
+                            Для электрооборудования энергетических и промышленных объектов
+                        </p>
+                        <h2 id="full-cycle-title" class="full-cycle__title h2">
+                            <span class="diagnostic__title--accent">Реализуем полный цикл работ по</span> диагностике,
+                            испытаниям и измерениям
+                        </h2>
+                    </div>
+                    <ul class="full-cycle__list">
+                        <li class="full-cycle__item cycle">
+                            <div class="cycle__img-video">
+                                <video
+                                    class="cycle__video"
+                                    autoplay
+                                    loop
+                                    muted
+                                    playsinline
+                                    preload="auto"
+                                    poster="/images/video/poster.jpg"
+                                    width="298"
+                                    height="298"
+                                >
+                                    <source src="/video/cycle1.mp4" type="video/mp4" />
+                                    <source src="/video/cycle1.webm" type="video/webm" />
+                                </video>
+                            </div>
+                            <div class="cycle-description">
+                                <div class="cycle-description__header">
+                                    <p class="cycle-description__subtitle">Лаборатория диагностики</p>
+                                    <p class="cycle-description__title">
+                                        <img
+                                            class="cycle-description-icon"
+                                            src="/images/icons/favIcon.svg"
+                                            alt=""
+                                            width="25"
+                                            height="25"
+                                            aria-hidden="true"
+                                            loading="lazy"
+                                        />Диагностика электрооборудования
+                                    </p>
+                                </div>
+                                <div class="cycle-description__lists">
+                                    <ul class="cycle-description__list">
+                                        <li class="cycle-description__item">
+                                            Диагностика трансформаторов
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Диагностика электрических машин
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Диагностика коммутационной аппаратуры
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Диагностика кабельных линий
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                    </ul>
+                                    <ul class="cycle-description__list">
+                                        <li class="cycle-description__item">
+                                            Диагностика ЗУ с определением ЭМС
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Техническое освидетельствование
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Диагностика электрооборудования <br />с применением БПЛА
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание СИЗ
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="cycle-description__button button-accent">Подробнее</button>
+                            </div>
+                        </li>
+                        <li class="full-cycle__item cycle">
+                            <div class="cycle__img-video">
+                                <video
+                                    class="cycle__video"
+                                    autoplay
+                                    loop
+                                    muted
+                                    playsinline
+                                    preload="auto"
+                                    poster="/images/video/poster.jpg"
+                                    width="298"
+                                    height="298"
+                                >
+                                    <source src="/video/cycle2.mp4" type="video/mp4" />
+                                    <source src="/video/cycle2.webm" type="video/webm" />
+                                </video>
+                            </div>
+                            <div class="cycle-description">
+                                <div class="cycle-description__header">
+                                    <p class="cycle-description__subtitle">Лаборатория физико-химического анализа</p>
+                                    <p class="cycle-description__title">
+                                        <img
+                                            class="cycle-description-icon"
+                                            src="/images/icons/favIcon.svg"
+                                            alt=""
+                                            width="25"
+                                            height="25"
+                                            aria-hidden="true"
+                                            loading="lazy"
+                                        />Испытания энергетических, смазочных масел, изоляции и ГСМ
+                                    </p>
+                                </div>
+                                <div class="cycle-description__lists">
+                                    <ul class="cycle-description__list">
+                                        <li class="cycle-description__item">
+                                            Испытание трансформаторных масел
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание турбинных масел
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание образцов изоляции
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание силикагеля
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание трансформаторной резины
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание кислоты серной аккумуляторной
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание моторных масел
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                    </ul>
+                                    <ul class="cycle-description__list">
+                                        <li class="cycle-description__item">
+                                            Испытание компрессорных масел
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание индустриальных масел
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание трансмиссионных масел
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание гидравлических масел
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Анализ дизельного топлива
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Анализ СОЖ
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="cycle-description__button button-accent">Подробнее</button>
+                            </div>
+                        </li>
+                        <li class="full-cycle__item cycle">
+                            <div class="cycle__img-video">
+                                <video
+                                    class="cycle__video"
+                                    autoplay
+                                    loop
+                                    muted
+                                    playsinline
+                                    preload="auto"
+                                    poster="/images/video/poster.jpg"
+                                    width="298"
+                                    height="298"
+                                >
+                                    <source src="/video/cycle3.mp4" type="video/mp4" />
+                                    <source src="/video/cycle3.webm" type="video/webm" />
+                                </video>
+                            </div>
+                            <div class="cycle-description">
+                                <div class="cycle-description__header">
+                                    <p class="cycle-description__subtitle">Лаборатория метрологии</p>
+                                    <p class="cycle-description__title">
+                                        <img
+                                            class="cycle-description-icon"
+                                            src="/images/icons/favIcon.svg"
+                                            alt=""
+                                            width="25"
+                                            height="25"
+                                            aria-hidden="true"
+                                            loading="lazy"
+                                        />Метрологическое обеспечение средств измерения
+                                    </p>
+                                </div>
+                                <div class="cycle-description__lists">
+                                    <ul class="cycle-description__list">
+                                        <li class="cycle-description__item">
+                                            Поверка электротехнических СИ
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Поверка радиотехнических СИ
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Поверка теплотехнических СИ
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Поверка физико-химических СИ
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                    </ul>
+                                    <ul class="cycle-description__list">
+                                        <li class="cycle-description__item">
+                                            Аттестация испытательного оборудования <br />и передвижных
+                                            электролабораторий
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Ремонт электроизмерительной <br />и высоковольтной аппаратуры
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                        <li class="cycle-description__item">
+                                            Испытание СИ с целью утверждения типа
+                                            <img
+                                                class="cycle-description__icon"
+                                                src="/images/icons/arrow_outward.svg"
+                                                alt=""
+                                                width="10"
+                                                height="10"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button type="button" class="cycle-description__button button-accent">Подробнее</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </main>
+        <!-- Модальное окно -->
+        <div class="modal" id="modal-calc" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+            <div class="modal__overlay" data-close></div>
+            <div class="modal__window">
+                <button class="modal__close" type="button" aria-label="Закрыть окно" data-close>
+                    <img
+                        class="modal__close-icon"
+                        src="/images/icons/close.svg"
+                        alt=""
+                        width="23.93"
+                        height="23.93"
+                        aria-hidden="true"
+                        loading="eager"
+                    />
+                </button>
+                <div class="modal__content">
+                    <div class="modal__header">
+                        <h4 id="modal-title" class="modal__title h4">
+                            <span class="diagnostic__title--accent">Получите расчет стоимости и сроков</span> проведения
+                            необходимых испытаний или диагностики вашего оборудования
+                        </h4>
+                        <p class="modal__subtitle">
+                            Заполните форму и оставьте заявку. Свяжемся с вами в ближайшее время для уточнения деталей,
+                            после чего пришлем расчет.
+                        </p>
+                    </div>
+                    <form class="modal__form">
+                        <div class="modal__fields">
+                            <div class="modal__field">
+                                <label for="modal-name" class="modal__label">Контактное лицо</label>
+                                <input
+                                    type="text"
+                                    id="modal-name"
+                                    class="modal__input"
+                                    placeholder="Фамилия Имя Отчество*"
+                                    required
+                                />
+                            </div>
+                            <div class="modal__field">
+                                <label for="modal-phone" class="modal__label">Ваш номер телефона</label>
+                                <input
+                                    type="tel"
+                                    id="modal-phone"
+                                    class="modal__input"
+                                    placeholder="+7 (___) ___-__-__*"
+                                    required
+                                />
+                            </div>
+                            <div class="modal__field">
+                                <label for="modal-org" class="modal__label">Название вашей организации*</label>
+                                <input
+                                    type="text"
+                                    id="modal-org"
+                                    class="modal__input"
+                                    placeholder="ООО «Компания»*"
+                                    required
+                                />
+                            </div>
+                            <div class="modal__field">
+                                <label for="modal-inn" class="modal__label">ИНН вашей организации*</label>
+                                <input
+                                    type="text"
+                                    id="modal-inn"
+                                    class="modal__input"
+                                    placeholder="0000000000000*"
+                                    required
+                                />
+                            </div>
+                            <div class="modal__field">
+                                <label for="modal-email" class="modal__label">Ваш E-mail*</label>
+                                <input
+                                    type="email"
+                                    id="modal-email"
+                                    class="modal__input"
+                                    placeholder="pochta@mail.ru*"
+                                    required
+                                />
+                            </div>
+                        </div>
+
+                        <div class="modal__radio-group">
+                            <p class="modal__radio-title">Выберите лабораторию:</p>
+                            <div class="modal__radio">
+                                <input type="radio" id="lab-diagnostic" name="laboratory" value="diagnostic" />
+                                <label for="lab-diagnostic" class="modal__radio-label">Лаборатория диагностики</label>
+                            </div>
+                            <div class="modal__radio">
+                                <input type="radio" id="lab-chemical" name="laboratory" value="chemical" />
+                                <label for="lab-chemical" class="modal__radio-label"
+                                    >Лаборатория физико-химического анализа</label
+                                >
+                            </div>
+                            <div class="modal__radio">
+                                <input type="radio" id="lab-metrolog" name="laboratory" value="metrolog" />
+                                <label for="lab-metrolog" class="modal__radio-label">Лаборатория метрологии</label>
+                            </div>
+                        </div>
+                        <div class="modal__tech-spec">
+                            <div class="tech-spec__attach">
+                                <div class="tech-spec__header">
+                                    <p class="tech-spec__title">
+                                        Прикрепите ТЗ, результаты предыдущей диагностики, реквизиты компании или другие
+                                        файлы
+                                    </p>
+                                    <p class="tech-spec__subtitle">
+                                        Разрешенные форматы: .pdf, .doc, .docx, .xls, .xlsx, .jpg, .png, .tiff
+                                    </p>
+                                </div>
+                                <div class="tech-spec__body">
+                                    <div class="modal__file-upload">
+                                        <div class="modal__file-dropzone" id="fileDropzone">
+                                            <input
+                                                type="file"
+                                                id="fileInput"
+                                                class="modal__file-input"
+                                                multiple
+                                                accept=".pdf,.doc,.docx,.xls,.xlsx,.zip,.rar"
+                                            />
+                                        </div>
+                                        <div class="modal__file-list" id="fileList">
+                                            <!-- Список загруженных файлов будет добавляться сюда -->
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="modal__submit button-accent">Отправить заявку</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

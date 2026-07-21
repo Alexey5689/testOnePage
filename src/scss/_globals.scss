@@ -19,6 +19,14 @@ h1,
     line-height: 100%;
 }
 
+h2,
+.h2 {
+    font-size: #{rem(44)};
+    font-weight: 600;
+    line-height: 100%;
+    color: var(----color-nav-active);
+}
+
 h4,
 .h4 {
     font-size: #{rem(21)};
@@ -35,6 +43,12 @@ button {
 a {
     text-decoration: none;
 }
-button {
+button,
+.button-accent {
     border: none;
+    border-radius: var(--border-radius-btn);
+}
+.button-accent {
+    background-color: var(--green);
+    color: var(--white);
 }

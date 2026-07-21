@@ -3,7 +3,20 @@
 .diagnostic {
     --bg-position-y: 20%;
     &--bg {
-        background: url('../../../public/images/bg/diagnostic-bg.png') no-repeat center var(--bg-position-y) / cover;
+        background: url('/images/bg/diagnostic-bg@x1.png') no-repeat center var(--bg-position-y) / cover;
+
+        @supports (background-image: url('/images/bg/diagnostic-bg@x1.webp')) {
+            background-image: url('/images/bg/diagnostic-bg@x1.webp');
+        }
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            background-image: url('/images/bg/diagnostic-bg@x2.png');
+
+            @supports (background-image: url('/images/bg/diagnostic-bg@x2.webp')) {
+                background-image: url('/images/bg/diagnostic-bg@x2.webp');
+            }
+        }
+        min-height: #{rem(600)};
     }
     &__bgc {
         background: linear-gradient(to right, rgba(21, 64, 132, 0.72) 0%, rgba(21, 64, 132, 0) 72%);
@@ -23,7 +36,7 @@
     }
     &__title {
         width: #{rem(970)};
-        font-size: #{rem(58)};
+        min-height: #{rem(116)};
         &--accent {
             color: var(--green);
             display: block;
@@ -31,7 +44,7 @@
     }
     &__subtitle {
         width: #{rem(852)};
-        font-size: #{rem(21)};
+        min-height: #{rem(88)};
     }
     &__button {
         display: flex;
@@ -47,15 +60,12 @@
         display: flex;
         column-gap: #{rem(10)};
         align-items: center;
-        background-color: var(--green);
-        color: var(--white);
         font-size: #{rem(18)};
         line-height: 140%;
         font-weight: 600;
         padding-left: #{rem(26.5)};
         padding-right: #{rem(22.5)};
         padding-block: #{rem(20.5)};
-        border-radius: var(--border-radius-btn);
         width: #{rem(233)};
         height: #{rem(65)};
     }
