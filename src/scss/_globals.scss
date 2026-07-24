@@ -53,8 +53,14 @@ button,
 .button-accent {
     border: none;
     border-radius: var(--border-radius-btn);
+    padding: 0;
 }
 .button-accent {
     background-color: var(--green);
     color: var(--white);
+}
+main {
+    @include mobile {
+        @include visually-hidden;
+    }
 }

@@ -350,7 +350,7 @@
                 </div>
             </div>
         </header>
-        <!-- <main>
+        <main>
             <section
                 class="diagnostic diagnostic--bg"
                 aria-labelledby="diagnostic-title"
@@ -864,9 +864,9 @@
                     </ul>
                 </div>
             </section>
-        </main> -->
+        </main>
         <!-- Модальное окно -->
-        <!-- <div class="modal" id="modal-calc" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal" id="modal-calc" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
             <div class="modal__overlay" data-close></div>
             <div class="modal__window modal__window--calc">
                 <button class="modal__close" type="button" aria-label="Закрыть окно" data-close>
@@ -1112,7 +1112,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <div class="mobile-menu">
             <div class="mobile-menu__overlay">
                 <div class="mobile-menu__menu">
@@ -1138,86 +1138,307 @@
                             />
                         </button>
                     </div>
-                    <div class="mobile-menu__body">
-                        <nav class="mobile-menu__menu-mob">
-                            <ul class="mobile-menu__menu-list">
-                                <li class="mobile-menu__menu-item">
-                                    <button
-                                        type="button"
-                                        id="catalog-toggle"
-                                        class="mobile-menu__button"
-                                        aria-expanded="false"
-                                        aria-controls="catalog-menu"
-                                    >
-                                        Каталог услуг
-                                        <img
-                                            class="mobile-menu__icon-arrow"
-                                            src="/images/icons/menu-arrow.svg"
-                                            alt=""
-                                            width="8"
-                                            height="9"
+                    <div class="mobile-menu__scroll">
+                        <div class="mobile-menu__body">
+                            <nav class="mobile-menu__menu-mob">
+                                <ul class="mobile-menu__menu-list">
+                                    <li class="mobile-menu__menu-item">
+                                        <button
+                                            type="button"
+                                            id="mobile-catalog-toggle"
+                                            class="mobile-menu__button"
+                                            aria-expanded="false"
+                                            aria-controls="mobile-submenu-catalog"
+                                        >
+                                            Каталог услуг
+                                            <img
+                                                class="mobile-menu__icon-arrow"
+                                                src="/images/icons/menu-arrow.svg"
+                                                alt=""
+                                                width="8"
+                                                height="9"
+                                                aria-hidden="true"
+                                                loading="eager"
+                                            />
+                                        </button>
+                                        <ul
+                                            class="mobile-menu__submenu"
+                                            id="mobile-submenu-catalog"
+                                            role="menu"
                                             aria-hidden="true"
-                                            loading="eager"
-                                        />
-                                    </button>
-                                </li>
-                                <li class="mobile-menu__menu-item">
-                                    <a class="mobile-menu__menu-link" href="./index.html">О компании</a>
-                                </li>
-                                <li class="mobile-menu__menu-item">
-                                    <a class="mobile-menu__menu-link" href="/">Мероприятия</a>
-                                </li>
-                                <li class="mobile-menu__menu-item">
-                                    <a class="mobile-menu__menu-link" href="/">Новости</a>
-                                </li>
-                                <li class="mobile-menu__menu-item">
-                                    <a class="mobile-menu__menu-link" href="/">Библиотека</a>
-                                </li>
-                                <li class="mobile-menu__menu-item">
-                                    <a class="mobile-menu__menu-link" href="/">Контакты</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div class="mobile-menu__info">
-                        <address class="mobile-menu__contacts">
-                            <a href="tel:+7 (343) 318-21-61" class="mobile-menu__phone">
-                                <img
-                                    class="mobile-menu__contacts-icon mobile-menu__contacts-icon--phone"
-                                    src="/images/icons/phone.svg"
-                                    alt=""
-                                    width="17"
-                                    height="17"
-                                    aria-hidden="true"
-                                />
-                                <span>+7 (123) 456-78-90</span>
-                            </a>
-                            <a href="mailto:info@itc-energo.ru" class="mobile-menu__email">
-                                <img
-                                    class="mobile-menu__contacts-icon mobile-menu__contacts-icon--email"
-                                    src="/images/icons/mail.svg"
-                                    alt=""
-                                    width="20"
-                                    height="16"
-                                    aria-hidden="true"
-                                    loading="lazy"
-                                />
-                                <span>info@example.com</span>
-                            </a>
-                        </address>
-                        <div class="mobile-menu__btn-group">
-                            <button class="mobile-menu__info-button">Получить консультацию</button>
-                            <button class="mobile-menu__info-button mobile-menu__info-button--alt">
-                                <img
-                                    class="mobile-menu__contacts-icon mobile-menu__contacts-icon--advice"
-                                    src="/images/icons/adviceIcon.svg"
-                                    alt=""
-                                    width="24"
-                                    height="16"
-                                    aria-hidden="true"
-                                    loading="lazy"
-                                />Совет по диагностики
-                            </button>
+                                        >
+                                            <li class="mobile-menu__subitem">
+                                                <button
+                                                    type="button"
+                                                    class="mobile-menu__subtoggle"
+                                                    aria-expanded="false"
+                                                    aria-controls="mobile-submenu-diagnostic"
+                                                >
+                                                    Лаборатория диагностики
+                                                    <img
+                                                        class="mobile-menu__icon-arrow"
+                                                        src="/images/icons/menu-arrow.svg"
+                                                        alt=""
+                                                        width="8"
+                                                        height="9"
+                                                        aria-hidden="true"
+                                                        loading="eager"
+                                                    />
+                                                </button>
+                                                <ul
+                                                    class="mobile-menu__submenu-level2"
+                                                    id="mobile-submenu-diagnostic"
+                                                    role="menu"
+                                                    aria-hidden="true"
+                                                >
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Диагностика трансформаторов</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Диагностика электрических машин</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Диагностика коммутационной аппаратуры</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Диагностика кабельных линий</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Диагностика ЗУ с определением ЭМС</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Техническое освидетельствование</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Диагностика электрооборудования с применением БПЛА</a
+                                                        >
+                                                    </li>
+                                                    <li><a href="#" class="mobile-menu__link">Испытание СИЗ</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="mobile-menu__subitem">
+                                                <button
+                                                    type="button"
+                                                    class="mobile-menu__subtoggle"
+                                                    aria-expanded="false"
+                                                    aria-controls="mobile-submenu-chemical"
+                                                >
+                                                    Лаборатория физико-химического анализа
+                                                    <img
+                                                        class="mobile-menu__icon-arrow"
+                                                        src="/images/icons/menu-arrow.svg"
+                                                        alt=""
+                                                        width="8"
+                                                        height="9"
+                                                        aria-hidden="true"
+                                                        loading="eager"
+                                                    />
+                                                </button>
+                                                <ul
+                                                    class="mobile-menu__submenu-level2"
+                                                    id="mobile-submenu-chemical"
+                                                    role="menu"
+                                                    aria-hidden="true"
+                                                >
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание трансформаторных масел</a
+                                                        >
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание турбинных масел</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание образцов изоляции</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link">Испытание силикагеля</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание трансформаторной резины</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание кислоты серной аккумуляторной</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание моторных масел</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание компрессорных масел</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание индустриальных масел</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание трансформаторной резины</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание гидравлических масел</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Анализ дизельного топлива</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link">Анализ СОЖ</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="mobile-menu__subitem">
+                                                <button
+                                                    type="button"
+                                                    class="mobile-menu__subtoggle"
+                                                    aria-expanded="false"
+                                                    aria-controls="mobile-submenu-metrolog"
+                                                >
+                                                    Лаборатория метрологии
+                                                    <img
+                                                        class="mobile-menu__icon-arrow"
+                                                        src="/images/icons/menu-arrow.svg"
+                                                        alt=""
+                                                        width="8"
+                                                        height="9"
+                                                        aria-hidden="true"
+                                                        loading="eager"
+                                                    />
+                                                </button>
+                                                <ul
+                                                    class="mobile-menu__submenu-level2"
+                                                    id="mobile-submenu-metrolog"
+                                                    role="menu"
+                                                    aria-hidden="true"
+                                                >
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Поверка электротехнических СИ</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Поверка радиотехнических СИ</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Поверка теплотехнических СИ</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Поверка физико-химических СИ</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Аттестация испытательного оборудования и передвижных
+                                                            электролабораторий</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Ремонт электроизмерительной и высоковольтной аппаратуры</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="mobile-menu__link"
+                                                            >Испытание СИ с целью утверждения типа</a
+                                                        >
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="mobile-menu__menu-item">
+                                        <a class="mobile-menu__menu-link" href="./index.html">О компании</a>
+                                    </li>
+                                    <li class="mobile-menu__menu-item">
+                                        <a class="mobile-menu__menu-link" href="/">Мероприятия</a>
+                                    </li>
+                                    <li class="mobile-menu__menu-item">
+                                        <a class="mobile-menu__menu-link" href="/">Новости</a>
+                                    </li>
+                                    <li class="mobile-menu__menu-item">
+                                        <a class="mobile-menu__menu-link" href="/">Библиотека</a>
+                                    </li>
+                                    <li class="mobile-menu__menu-item">
+                                        <a class="mobile-menu__menu-link" href="/">Контакты</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mobile-menu__info">
+                            <address class="mobile-menu__contacts">
+                                <a href="tel:+7 (343) 318-21-61" class="mobile-menu__phone">
+                                    <img
+                                        class="mobile-menu__contacts-icon mobile-menu__contacts-icon--phone"
+                                        src="/images/icons/phone.svg"
+                                        alt=""
+                                        width="17"
+                                        height="17"
+                                        aria-hidden="true"
+                                    />
+                                    <span>+7 (123) 456-78-90</span>
+                                </a>
+                                <a href="mailto:info@itc-energo.ru" class="mobile-menu__email">
+                                    <img
+                                        class="mobile-menu__contacts-icon mobile-menu__contacts-icon--email"
+                                        src="/images/icons/mail.svg"
+                                        alt=""
+                                        width="20"
+                                        height="16"
+                                        aria-hidden="true"
+                                        loading="lazy"
+                                    />
+                                    <span>info@example.com</span>
+                                </a>
+                            </address>
+                            <div class="mobile-menu__btn-group">
+                                <button class="mobile-menu__info-button">Получить консультацию</button>
+                                <button class="mobile-menu__info-button mobile-menu__info-button--alt">
+                                    <img
+                                        class="mobile-menu__contacts-icon mobile-menu__contacts-icon--advice"
+                                        src="/images/icons/adviceIcon.svg"
+                                        alt=""
+                                        width="24"
+                                        height="16"
+                                        aria-hidden="true"
+                                        loading="lazy"
+                                    />Совет по диагностики
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

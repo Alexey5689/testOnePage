@@ -248,19 +248,182 @@ if (fileInput && fileList && dropzone) {
     });
 }
 
+// const burger = document.querySelector('.header__burger') as HTMLButtonElement | null;
+// const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement | null;
+// const overlay = document.querySelector('.mobile-menu__overlay') as HTMLElement | null;
+// const closeBtn = document.querySelector('.mobile-menu__close-btn') as HTMLButtonElement | null;
+
+// if (burger && mobileMenu && overlay) {
+//     mobileMenu.addEventListener('click', (e) => {
+//         e.stopPropagation();
+//     });
+
+//     // Открытие/закрытие по бургеру
+//     burger.addEventListener('click', () => {
+//         const isOpen = burger.classList.toggle('header__burger--open');
+//         burger.setAttribute('aria-expanded', String(isOpen));
+//         mobileMenu.classList.toggle('mobile-menu--open');
+//         overlay.classList.toggle('mobile-menu__overlay--open');
+//         document.body.style.overflow = isOpen ? 'hidden' : '';
+//     });
+
+//     // Закрытие по клику на оверлей
+//     overlay.addEventListener('click', () => {
+//         burger.classList.remove('header__burger--open');
+//         burger.setAttribute('aria-expanded', 'false');
+//         mobileMenu.classList.remove('mobile-menu--open');
+//         overlay.classList.remove('mobile-menu__overlay--open');
+//         document.body.style.overflow = '';
+//     });
+
+//     // Закрытие по кнопке закрытия
+//     closeBtn?.addEventListener('click', () => {
+//         burger.classList.remove('header__burger--open');
+//         burger.setAttribute('aria-expanded', 'false');
+//         mobileMenu.classList.remove('mobile-menu--open');
+//         overlay.classList.remove('mobile-menu__overlay--open');
+//         document.body.style.overflow = '';
+//     });
+
+//     // Закрытие по ссылкам внутри меню (если нужно)
+//     mobileMenu.querySelectorAll('.header__mobile-link').forEach((link) => {
+//         link.addEventListener('click', () => {
+//             burger.classList.remove('header__burger--open');
+//             burger.setAttribute('aria-expanded', 'false');
+//             mobileMenu.classList.remove('mobile-menu--open');
+//             overlay.classList.remove('mobile-menu__overlay--open');
+//             document.body.style.overflow = '';
+//         });
+//     });
+// }
+
+// === Мобильное подменю ===
+
+// const mobileToggles = document.querySelectorAll('.mobile-menu__button, .mobile-menu__subtoggle');
+
+// mobileToggles.forEach((toggle) => {
+//     toggle.addEventListener('click', (e) => {
+//         e.stopPropagation();
+
+//         const targetId = toggle.getAttribute('aria-controls');
+//         if (!targetId) return;
+//         const target = document.getElementById(targetId);
+//         if (!target) return;
+
+//         // Закрываем другие открытые подменю того же уровня
+//         const isSub = toggle.classList.contains('mobile-menu__subtoggle');
+//         const parent = toggle.closest('.mobile-menu__item, .mobile-menu__subitem');
+//         if (parent) {
+//             const siblings = isSub
+//                 ? parent.querySelectorAll('.mobile-menu__submenu-level2--open')
+//                 : parent.querySelectorAll('.mobile-menu__submenu--open');
+//             siblings.forEach((el) => {
+//                 if (el !== target) {
+//                     el.classList.remove('mobile-menu__submenu--open', 'mobile-menu__submenu-level2--open');
+//                     const btn = document.querySelector(`[aria-controls="${el.id}"]`);
+//                     if (btn) btn.setAttribute('aria-expanded', 'false');
+//                 }
+//             });
+//         }
+
+//         // Явно проверяем, открыто ли подменю
+//         const isOpen =
+//             target.classList.contains('mobile-menu__submenu--open') ||
+//             target.classList.contains('mobile-menu__submenu-level2--open');
+
+//         if (isOpen) {
+//             // Закрываем
+//             target.classList.remove('mobile-menu__submenu--open', 'mobile-menu__submenu-level2--open');
+//             toggle.setAttribute('aria-expanded', 'false');
+//             target.setAttribute('aria-hidden', 'true');
+//         } else {
+//             // Открываем
+//             target.classList.add('mobile-menu__submenu--open');
+//             toggle.setAttribute('aria-expanded', 'true');
+//             target.setAttribute('aria-hidden', 'false');
+//         }
+//     });
+// });
+// === Кнопка "Каталог услуг" (первый уровень) ===
+const catalogToggle = document.querySelector('.mobile-menu__button') as HTMLButtonElement | null;
+const catalogSubmenu = document.getElementById('mobile-submenu-catalog') as HTMLElement | null;
+
+if (catalogToggle && catalogSubmenu) {
+    catalogToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        // Переключаем класс открытия
+        const isOpen = catalogSubmenu.classList.toggle('mobile-menu__submenu--open');
+        catalogToggle.setAttribute('aria-expanded', String(isOpen));
+        catalogSubmenu.setAttribute('aria-hidden', String(!isOpen));
+    });
+}
+
+// === Подменю второго уровня (лаборатории) ===
+const subToggles = document.querySelectorAll('.mobile-menu__subtoggle');
+
+subToggles.forEach((toggle) => {
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = toggle.getAttribute('aria-controls');
+        if (!targetId) return;
+        const target = document.getElementById(targetId);
+        if (!target) return;
+
+        // Закрываем другие открытые подменю второго уровня (опционально)
+        const parent = toggle.closest('.mobile-menu__subitem');
+        if (parent) {
+            parent.querySelectorAll('.mobile-menu__submenu-level2--open').forEach((el) => {
+                if (el !== target) {
+                    el.classList.remove('mobile-menu__submenu-level2--open');
+                    const btn = document.querySelector(`[aria-controls="${el.id}"]`);
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                }
+            });
+        }
+
+        // Переключаем текущее подменю
+        const isOpen = target.classList.toggle('mobile-menu__submenu-level2--open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+        target.setAttribute('aria-hidden', String(!isOpen));
+    });
+});
+
 const burger = document.querySelector('.header__burger') as HTMLButtonElement | null;
 const mobileMenu = document.querySelector('.mobile-menu') as HTMLElement | null;
 const overlay = document.querySelector('.mobile-menu__overlay') as HTMLElement | null;
+const closeBtn = document.querySelector('.mobile-menu__close-btn') as HTMLButtonElement | null;
+
+// Функция закрытия всех подменю в мобильном меню
+function closeAllMobileSubmenus() {
+    const submenus = document.querySelectorAll('.mobile-menu__submenu--open, .mobile-menu__submenu-level2--open');
+    submenus.forEach((el) => {
+        el.classList.remove('mobile-menu__submenu--open', 'mobile-menu__submenu-level2--open');
+        const toggle = document.querySelector(`[aria-controls="${el.id}"]`);
+        if (toggle) {
+            toggle.setAttribute('aria-expanded', 'false');
+            el.setAttribute('aria-hidden', 'true');
+        }
+    });
+}
 
 if (burger && mobileMenu && overlay) {
+    // Останавливаем всплытие кликов внутри меню, чтобы они не закрывали его
+    mobileMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
     // Открытие/закрытие по бургеру
     burger.addEventListener('click', () => {
         const isOpen = burger.classList.toggle('header__burger--open');
         burger.setAttribute('aria-expanded', String(isOpen));
+
+        // Если открываем меню — сбрасываем все подменю
+        if (isOpen) {
+            closeAllMobileSubmenus();
+        }
+
         mobileMenu.classList.toggle('mobile-menu--open');
         overlay.classList.toggle('mobile-menu__overlay--open');
-
-        console.log('overlay classes:', overlay.className); // посмотри, добавился ли --open
         document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
@@ -270,16 +433,28 @@ if (burger && mobileMenu && overlay) {
         burger.setAttribute('aria-expanded', 'false');
         mobileMenu.classList.remove('mobile-menu--open');
         overlay.classList.remove('mobile-menu__overlay--open');
+        closeAllMobileSubmenus();
         document.body.style.overflow = '';
     });
 
-    // Закрытие по ссылкам внутри меню (если нужно)
+    // Закрытие по кнопке закрытия
+    closeBtn?.addEventListener('click', () => {
+        burger.classList.remove('header__burger--open');
+        burger.setAttribute('aria-expanded', 'false');
+        mobileMenu.classList.remove('mobile-menu--open');
+        overlay.classList.remove('mobile-menu__overlay--open');
+        closeAllMobileSubmenus();
+        document.body.style.overflow = '';
+    });
+
+    // Закрытие по ссылкам внутри меню (если есть)
     mobileMenu.querySelectorAll('.header__mobile-link').forEach((link) => {
         link.addEventListener('click', () => {
             burger.classList.remove('header__burger--open');
             burger.setAttribute('aria-expanded', 'false');
             mobileMenu.classList.remove('mobile-menu--open');
             overlay.classList.remove('mobile-menu__overlay--open');
+            closeAllMobileSubmenus();
             document.body.style.overflow = '';
         });
     });

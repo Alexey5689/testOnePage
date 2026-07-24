@@ -50,6 +50,9 @@
         display: flex;
         column-gap: #{rem(10)};
     }
+    @include mobile {
+        @include visually-hidden;
+    }
 }
 .diagnostic-button {
     display: flex;
