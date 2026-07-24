@@ -6,12 +6,14 @@
 }
 
 @mixin hide {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    display: none !important;
 }
 @mixin show {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
 }
 @mixin flex-center($isInline: false) {
     @if $isInline {
